@@ -15,9 +15,9 @@ const baseURL = 'http://localhost:3000/words/';
 
 const handleError = fn => (...params) =>
     fn(...params).catch(error => {
+        console.log(error)
         vm.flash(`${error.response.status}: ${error.response.statusText}`, 'error');
     });
-
 
 export const api = {
     getWord: handleError(async id => {
