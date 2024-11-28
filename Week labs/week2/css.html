@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <style>
+        * {
+            color: black  ;
+        }
+        div p {
+            color:  blue;
+            font-size: large;
+        }
+        div h3 {
+            color: brown;
+        }
+        h1, h2 {
+            text-align: center;
+            color:  blue;
+        }
+        .red {
+            color: red;
+        }
+        .yellow-bg{
+            color: #ffa;
+        }
+        #ident{
+            color: skyblue;
+        }
+        div.row * {
+            color: goldenrod;
+        }
+        div > p {
+            background-color: yellow;
+        }
+        div + p { /* Lấy sau thằng div (ngoài div)*/
+            background-color: orange; 
+        }
+        div ~ p {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <h1>This is h1</h1>
+    <h2>This is h2</h2>
+    <div>        
+        <h3>H3</h3>
+        <p>Hello week2</p>
+    </div>
+        <p class="red">This will show class red</p>
+        <p class="red yellow-bg">Red text and yellow bg</p>
+        <p id="ident">ident</p>
+    <div>NO IDENT</div>
+    <div class="row">
+        <p>p1</p>
+        <p>p2</p>
+    </div>
+    <div>
+        <p>Para 1 in div</p>
+        <p>Para 2 in div</p>
+        <section><p>Para not in div</p></section>
+        <p>Para 3 in div</p>
+    </div>
+    
+</body>
+</html>

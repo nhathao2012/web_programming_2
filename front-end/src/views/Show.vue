@@ -14,6 +14,14 @@
       </div>
       <input type="text" readonly  :value="word.german"/>
     </div>
+
+    <div class="ui labeled input fluid">
+      <div class="ui label">
+        <i class="vietnam flag"></i> Vietnam
+      </div>
+      <input type="text" readonly  :value="word.vietnamese"/>
+    </div>
+
     <div class="actions">
       <router-link :to="{ name: 'edit', params: { id: this.$route.params.id }}">
         Edit word

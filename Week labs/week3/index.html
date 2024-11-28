@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>NguyenNhatHao Week 4</title>
+  <!-- Import Styles -->
+  <link rel="stylesheet" href="assets/styles.css" />
+  <!-- Import Vue.js -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+</head>
+
+<body>
+  <div class="nav-bar"></div>
+  <div id="app">
+    <div class="product">
+      <div class="product-image">
+        <a :href="productImg"> <!--Challenge 2-->
+          <img :src="productImg" alt="sock">
+        </a>
+      </div>
+      <div class="product-info">
+        <h1>{{ title }}</h1>
+        <h3>{{description}}</h3> <!--Challenge 1-->
+        <p v-if="inStock">In stock</p>
+        <!-- <p v-else-if="inventory <=10 && inventory > 0">Almost sold out!!!</p> -->
+        <p v-else :class="{outOfStock: !inStock}">Out of stock</p> <!--Challenge 6-->
+        <!-- <span v-if="onSale" style="font-weight: bold;color: red;">ON SALE!!!</span>  Challenge 3 -->
+        <p>{{sale}}</p> <!--Challenge 7 -->
+        <ul>
+          <li v-for="detail in details">{{ detail }}</li>
+        </ul>
+        <ul>
+          <p>Size</p>
+          <li v-for="size in sizes">{{ size }}</li> <!--Challenge 4-->
+        </ul>
+
+        <div v-for="(variant, index) in variants" :key="variant.variantId" class="color-box"
+          :style="{ backgroundColor: variant.variantColor }" @mouseover="updateProduct(index)">
+        </div>
+        <button v-on:click="addToCart" :disabled="!inStock" :class="{disabledButton:!inStock}">Add to cart</button>
+        <button v-on:click="deleteItem">Delete 1 item</button><!--Challenge 5-->
+
+        <div class="cart">
+          <p>Cart({{cart}})</p>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Import Js -->
+  <script src="main.js"></script>
+</body>
+
+</html>

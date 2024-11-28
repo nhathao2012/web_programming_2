@@ -3,6 +3,7 @@
     <h1>New Word</h1>
     <word-form @createOrUpdate="createOrUpdate"></word-form>
   </div>
+
 </template>
 
 <script>
@@ -19,6 +20,7 @@ export default {
       const res = await api.createWord(word);
       this.flash('Word created', 'success');
       this.$router.push(`/words/${res._id}`);
+      location.reload();
     }
   }
 };

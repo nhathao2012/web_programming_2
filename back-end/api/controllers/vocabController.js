@@ -27,10 +27,13 @@ exports.read_a_word = function (req, res) {
 };
 
 exports.update_a_word = function (req, res) {
-    Vocab.findOneAndUpdate({ _id: req.params.wordId }, req.body, { new: true }, function (err, word) {
-        if (err)
-            res.send(err);
-        res.json(word);
+    Vocab.findOneAndUpdate(
+        { _id: req.params.wordId },
+        req.body, { new: true },
+        function (err, word) {
+            if (err)
+                res.send(err);
+            res.json(word);
     });
 };
 

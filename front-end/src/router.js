@@ -5,6 +5,7 @@ import New from './views/New.vue';
 import Show from './views/Show.vue';
 import Edit from './views/Edit.vue';
 import Test from './views/Test.vue';
+import NhatHao2012 from "./views/NhatHao2012.vue";
 
 Vue.use(Router);
 
@@ -41,6 +42,11 @@ export default new Router({
             path: '/test',
             name: 'test',
             component: Test,
+        },
+        {
+          path: '/nhathao2012',
+          name: 'nhathao2012',
+          component: NhatHao2012,
         }
     ]
 })
